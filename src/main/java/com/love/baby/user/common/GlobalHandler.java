@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestControllerAdvice(basePackages = "com.love.baby.user")
+@RestControllerAdvice(basePackages = "com.love.baby")
 public class GlobalHandler implements ResponseBodyAdvice<Object> {
 
     public static Gson gson = new GsonBuilder().create();
