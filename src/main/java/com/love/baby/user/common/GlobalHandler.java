@@ -40,11 +40,12 @@ public class GlobalHandler implements ResponseBodyAdvice<Object> {
     @Override
     public RenderInfo beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         logger.info("全局统一封装 body = {}", gson.toJson(body));
-        if (body instanceof RenderInfo) {
+        if (body instanceof RenderInfo) {//如果封装了一次就直接返回
             return gson.fromJson(gson.toJson(body), RenderInfo.class);
         }
         RenderInfo<Object> renderInfo = new RenderInfo<>();
         renderInfo.setCode(RenderInfo.OK);
+        renderInfo.setMessage("请求成功");
         renderInfo.setData(body);
         return renderInfo;
     }

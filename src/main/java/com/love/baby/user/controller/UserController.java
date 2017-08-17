@@ -1,5 +1,6 @@
 package com.love.baby.user.controller;
 
+import com.love.baby.user.entity.Users;
 import com.love.baby.user.service.UserService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public void getByid(@PathVariable String id) {
-        id.substring(111,111);
+    public Users getByid(@PathVariable String id) {
+        return userService.getById(id);
     }
 }
