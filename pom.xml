@@ -101,6 +101,7 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <!--健康值检查-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
